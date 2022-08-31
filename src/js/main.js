@@ -167,4 +167,42 @@
   }
 
   document.querySelector("#sortFSM").addEventListener("click", sortByName);
+
+  function sortByFaculty() {
+    students.sort(function (a, b) {
+      return a.faculty > b.faculty ? 1 : -1;
+    });
+
+    fillTable();
+  }
+
+  document
+    .querySelector("#sortFaculty")
+    .addEventListener("click", sortByFaculty);
+
+  function sortByAge() {
+    students.sort(function (a, b) {
+      let aAge = Math.floor((Date.now() - a.dob) / (1000 * 60 * 60 * 24 * 365));
+      let bAge = Math.floor((Date.now() - b.dob) / (1000 * 60 * 60 * 24 * 365));
+
+      return aAge > bAge ? 1 : -1;
+    });
+
+    fillTable();
+  }
+
+  document.querySelector("#sortAge").addEventListener("click", sortByAge);
+
+  function sortByLearning() {
+    students.sort(function (a, b) {
+      return a.startyear > b.startyear ? 1 : -1;
+    });
+
+    fillTable();
+  }
+
+  document
+    .querySelector("#sortLearning")
+    .addEventListener("click", sortByLearning);
+  
 })();
