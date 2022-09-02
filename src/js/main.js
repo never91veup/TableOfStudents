@@ -33,6 +33,7 @@
     for (let i = 0; i < errors.length; i++) {
       errors[i].remove();
     }
+    errorsCount = [];
   };
 
   let checkFieldsPresence = function () {
